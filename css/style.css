@@ -1,0 +1,74 @@
+/*
+  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Dancing Script', cursive;
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+}
+
+.wrapper {
+  height: 100vh;
+  background-image: url("../img/bg.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+header {
+  position: absolute;
+  left: 0;
+  top: 6vh;
+  width: 100%;
+}
+
+/* Start main-menu */
+nav.main {
+  width: 60%;
+  margin: 0 auto;
+  padding-bottom: 4vh;
+}
+
+nav.main ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+nav.main li {
+  flex-basis: 25%;
+}
+
+nav.main a {
+  display: block;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #444;
+  text-decoration: none;
+  font-family: 'Roboto', Arial, sans-serif;
+  text-transform: uppercase;
+}
+
+/* End main-menu */
+
+/* Start logo */
+section.logo {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.logo-top {
+  margin: 0 auto;
+}
+
+.logo-bottom {
+  margin: 0 auto;
+}
