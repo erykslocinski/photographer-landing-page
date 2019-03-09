@@ -59,16 +59,84 @@ nav.main a {
 /* End main-menu */
 
 /* Start logo */
-section.logo {
-  display: flex;
-  flex-direction: column;
+section {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+div.logo {
+  position: absolute;
+  top: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
 }
 
-.logo-top {
+.animate-border {
+  border-bottom: 3px solid black;
+  width: 0;
   margin: 0 auto;
 }
 
-.logo-bottom {
-  margin: 0 auto;
+div.logo:hover>.animate-border {
+  animation: animate-logo 1s both;
+  ;
+}
+
+@keyframes animate-logo {
+  0% {
+    border-bottom: 3px solid #444;
+    width: 0;
+    color: #444;
+  }
+
+  25% {
+    border-bottom: 3px solid #999;
+    width: 60%;
+    color: #999;
+  }
+
+  100% {
+    width: 36%;
+    color: #444;
+  }
+}
+
+@keyframes animate-logo-color {
+  0% {
+    color: #444;
+  }
+
+  25% {
+    color: #999;
+  }
+
+  100% {
+    color: #444;
+  }
+}
+
+div.logo h1 a {
+  display: block;
+  font-size: 3rem;
+  text-align: center;
+  letter-spacing: 3px;
+  color: #444;
+  text-decoration: none;
+  font-family: 'Lato', Arial, sans-serif;
+  text-transform: uppercase;
+}
+
+div.logo h1 a span {
+  display: block;
+  font-size: 2rem;
+  text-align: center;
+  color: #444;
+  text-decoration: none;
+  font-family: 'Dancing Script', cursive;
+}
+
+div.logo h1 a:hover,
+div.logo h1 a span:hover {
+  animation: animate-logo-color 1s both;
 }
