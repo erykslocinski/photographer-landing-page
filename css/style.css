@@ -80,7 +80,6 @@ div.logo {
 
 div.logo:hover>.animate-border {
   animation: animate-logo 1s both;
-  ;
 }
 
 @keyframes animate-logo {
@@ -98,20 +97,6 @@ div.logo:hover>.animate-border {
 
   100% {
     width: 36%;
-    color: #444;
-  }
-}
-
-@keyframes animate-logo-color {
-  0% {
-    color: #444;
-  }
-
-  25% {
-    color: #999;
-  }
-
-  100% {
     color: #444;
   }
 }
@@ -136,7 +121,21 @@ div.logo h1 a span {
   font-family: 'Dancing Script', cursive;
 }
 
-div.logo h1 a:hover,
-div.logo h1 a span:hover {
+div.logo:hover a,
+div.logo:hover a span {
   animation: animate-logo-color 1s both;
+}
+
+@keyframes animate-logo-color {
+  0% {
+    color: #444 !important;
+  }
+
+  25% {
+    color: #999;
+  }
+
+  100% {
+    color: #444;
+  }
 }
