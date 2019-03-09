@@ -40,10 +40,13 @@ nav.main ul {
   list-style: none;
   display: flex;
   flex-direction: row;
+  /* justify-content: space-evenly; */
 }
 
 nav.main li {
   flex-basis: 25%;
+  white-space: nowrap;
+  /* flex: 1; */
 }
 
 nav.main a {
@@ -54,6 +57,13 @@ nav.main a {
   text-decoration: none;
   font-family: 'Roboto', Arial, sans-serif;
   text-transform: uppercase;
+  transition: .2s linear;
+}
+
+nav.main a:hover,
+nav.main .main-active {
+  font-size: 2rem;
+  color: #666;
 }
 
 /* End main-menu */
@@ -69,16 +79,18 @@ div.logo {
   top: 10vh;
   left: 50%;
   transform: translateX(-50%);
-  width: 100%;
+  width: 60%;
 }
 
-.animate-border {
+div.logo::after {
+  content: "";
+  display: block;
   border-bottom: 3px solid black;
   width: 0;
-  margin: 0 auto;
+  margin: 10px auto;
 }
 
-div.logo:hover>.animate-border {
+div.logo:hover::after {
   animation: animate-logo 1s both;
 }
 
@@ -91,12 +103,12 @@ div.logo:hover>.animate-border {
 
   25% {
     border-bottom: 3px solid #999;
-    width: 60%;
+    width: 100%;
     color: #999;
   }
 
   100% {
-    width: 36%;
+    width: 60%;
     color: #444;
   }
 }
@@ -113,11 +125,13 @@ div.logo h1 a {
 }
 
 div.logo h1 a span {
+  position: relative;
   display: block;
   font-size: 2rem;
   text-align: center;
   color: #444;
   text-decoration: none;
+  text-transform: none;
   font-family: 'Dancing Script', cursive;
 }
 
@@ -128,7 +142,7 @@ div.logo:hover a span {
 
 @keyframes animate-logo-color {
   0% {
-    color: #444 !important;
+    color: #444;
   }
 
   25% {
@@ -138,4 +152,51 @@ div.logo:hover a span {
   100% {
     color: #444;
   }
+}
+
+div.logo span::before,
+div.logo span::after {
+  content: "";
+  display: inline-block;
+  margin: 0 1.5rem 0.5rem;
+  width: 60px;
+  height: 2px;
+  background-color: #666;
+}
+
+/* End logo */
+
+/* Start aside */
+aside {
+  position: fixed;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+}
+
+aside ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-evenly; */
+}
+
+aside li {
+  flex-basis: 25%;
+  white-space: nowrap;
+  /* flex: 1; */
+}
+
+aside a {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #fff;
+  opacity: 0.5;
+  margin: 10px 0;
+}
+
+aside a.active {
+  opacity: 1;
 }
